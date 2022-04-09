@@ -1,0 +1,32 @@
+@media (max-width: 599px) {
+    label{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .vehicle-search {
+        width: 100%;
+    }
+    label {
+        width: 100%;
+    }
+ }
+
+ @media (min-width: 600px) and (max-width: 959px) {
+    .vehicle-search{
+        margin-top: -110px;
+    }
+    input {
+        width: 270px;
+    }
+ }
+
+
+ @media (min-width: 960px) {
+     input {
+         width:300px;
+     }
+     .vehicle-search {
+         margin-top: -100px;
+     }
+ }

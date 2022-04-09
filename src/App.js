@@ -1,23 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import { useSelector } from 'react-redux';
+import Navbar from './components/Navbar';
+import Home from './pages/Home';
 
 function App() {
+
+  const carList = useSelector((state) => state.cars.value);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App bg-zinc-100">
+      <Navbar />
+
+      <Home />
+
+      <div>
+        {/* <ul>
+          {carList.map((cars) => {
+            return <li key={cars.id}>{cars.make}</li>
+          })}
+        </ul> */}
+      </div>
     </div>
   );
 }

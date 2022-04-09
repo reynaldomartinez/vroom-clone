@@ -1,0 +1,65 @@
+.menu-list {
+    font-size: .8rem;
+    font-weight: 600;
+    letter-spacing: 1.25px;
+}
+
+.menu-list li a {
+    margin-left: 30px;
+}
+.nav {
+    padding: 24px 32px;
+    position: sticky;
+    top: 0;
+}
+
+
+
+
+@media (max-width: 599px) {
+    .nav {
+        background-color: #fff;
+        padding: 15px;
+    }
+    .nav-wrapper {
+        background-color: aliceblue;
+    }
+    #ionNoti {
+        font-size: 1.8rem;
+        padding-top: 2px;
+        padding-right:4px;
+        margin-right: 10px;
+    }
+    #biMenu {
+        font-size: 1.8rem;
+    }
+  }
+
+
+  @media (min-width: 600px) and (max-width: 959px) {
+      #biMenu {
+          display: none;
+      }
+      #ionNoti {
+        font-size: 1.8rem;
+        padding-top: 2px;
+        padding-right:4px;
+        margin-right: 10px;
+      }
+      .nav {
+          padding: 25px;
+      }
+  }
+
+
+  @media (min-width: 960px) {
+      #biMenu {
+          display: none;
+      }
+      #ionNoti{
+          font-size: 1.5rem;
+      }
+      .nav{
+          max-width: 1920px;
+      }
+  }
