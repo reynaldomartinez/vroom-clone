@@ -1,27 +1,22 @@
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import { useSelector } from 'react-redux';
 import Navbar from './components/Navbar';
+import Buy from './pages/Buy';
 import Home from './pages/Home';
 
 function App() {
 
-  const carList = useSelector((state) => state.cars.value);
 
   return (
     <div className="App bg-zinc-100">
       <Navbar />
 
-      <Home />
-
-      <div>
-        {/* <ul>
-          {carList.map((cars) => {
-            return <li key={cars.id}>{cars.make}</li>
-          })}
-        </ul> */}
-      </div>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/cars' element={<Buy />} />
+      </Routes>
     </div>
-  );
+  )
 }
 
 export default App;

@@ -16,9 +16,11 @@ function Home() {
                 <p>Shop, buy, and get it delivered right to y0our doorstep. </p>
             </div>
             <div className='right-content '>
-                <img src={homeFrontCar} alt='2021 Subaru Wrx Sti' className=' max-w-none	' /> 
+                <img src={homeFrontCar} alt='2021 Subaru Wrx Sti' className=' max-w-none' /> 
             </div>
+
             <SearchBar />
+            
         </div>
 
         <div className='vehicle-type-wrapper bg-white text-center'>
@@ -45,7 +47,7 @@ function Home() {
                 <img src={truck} alt="high quality trucks" className='hqt-img rounded-full' />
                 <div className='hq-text '>
                     <h2 className='pl-2'>High-Quality Cars</h2>
-                    <p class="mt-4 px-4 text-sm leading-6 col-start-1 sm:col-span-2 lg:mt-6 lg:row-start-4 lg:col-span-1 dark:text-slate-400">
+                    <p className="mt-4 px-4 text-sm leading-6 col-start-1 sm:col-span-2 lg:mt-6 lg:row-start-4 lg:col-span-1 dark:text-slate-400">
                         Multiple inspections. Free CARFAX® history report. Free limited warranty.    
                     </p>
                 </div>
@@ -54,7 +56,7 @@ function Home() {
                 <img src={suv} alt="buying made easy" className='hqt-img rounded-full' />
                 <div className='bme-text'>
                     <h2>Buying Made Easy</h2>
-                    <p class="mt-4 text-sm leading-6 col-start-1 sm:col-span-2 lg:mt-6 lg:row-start-4 lg:col-span-1 dark:text-slate-400">
+                    <p className="mt-4 text-sm leading-6 col-start-1 sm:col-span-2 lg:mt-6 lg:row-start-4 lg:col-span-1 dark:text-slate-400">
                         No haggling. No hassles. An easy and efficient car buying process— the way it should be.  
                     </p>
                 </div>
@@ -63,16 +65,18 @@ function Home() {
                 <img src={sedan} alt="delivered right to you" className='hqt-img rounded-full' />
                 <div className='drty-text'>
                     <h2>Delivered Right to You</h2>
-                    <p class="mt-4 text-sm leading-6 col-start-1 sm:col-span-2 lg:mt-6 lg:row-start-4 lg:col-span-1 dark:text-slate-400">
+                    <p className="mt-4 text-sm leading-6 col-start-1 sm:col-span-2 lg:mt-6 lg:row-start-4 lg:col-span-1 dark:text-slate-400">
                        Get your car or truck shipped to your home or a convenient nearby location.
                     </p>
                 </div>
             </div>
             
         </div>
-        <button class="flex-none buy-now-btn w-1/2 h-12 uppercase font-medium tracking-wider bg-red-600 text-white ml-2.5 my-6" type="submit">
-                Buy now
-            </button>
+            <div className='lg:w-full lg:flex lg:justify-center'>
+                <button className=" buy-now-btn w-1/2 h-12 uppercase font-medium tracking-wider bg-red-600 text-white ml-2.5 my-6" type="submit">
+                    Buy now
+                </button>
+            </div>
             
 
         <div className='vroom-values p-8'>
@@ -133,6 +137,7 @@ function Home() {
             </div>
         </div>
     
+
     </div>
   )
 }

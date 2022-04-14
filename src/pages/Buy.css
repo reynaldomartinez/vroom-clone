@@ -1,0 +1,32 @@
+@media (max-width: 599px) {
+    .pagination {
+        height: 60px;
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+    }
+    .page-link {
+        padding: 5px;
+        margin: 5px;
+        border-radius: 5px;
+        border: 1px solid #2b2eff;
+        color: #2b2eff;
+    }
+    .page-link a:hover {
+        color: #fff;
+        background-color: #2b2eff;
+        border-radius: 10px;
+        padding: 10px;
+    }
+    .active a {
+        background-color: blueviolet;
+        border-radius: 10px;
+        color:#fff;
+        padding: 10px;
+    }
+    .disabledBtn a {
+        border-color: aliceblue;
+        color: grey;
+    }
+}
