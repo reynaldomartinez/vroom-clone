@@ -1,0 +1,23 @@
+@media (max-width: 599px) {
+    h2 {
+        padding-bottom: 0px !important;
+        font-weight: 700;
+    }
+    img {
+        height: 100%;
+        width: 200px;
+        margin-left: 0 !important;
+        margin-top: 0 !important;
+    }
+    .car-card {
+        display: flex;
+        border: 1px solid grey;
+    }
+    .card-text {
+        display: flex;
+        flex-direction: column;
+        /* margin: 50px 0 0 20px; */
+        margin-top: 30px;
+        margin-left: 40px;
+    }
+}
