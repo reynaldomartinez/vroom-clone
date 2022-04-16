@@ -1,13 +1,40 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
+import { useSelector } from 'react-redux';
+import HomeCarList from './HomeCarList';
 import './SearchBar.css';
 
 function SearchBar() {
+  const [carList, setCarList] = useState([]);
+  const cars = useSelector((state) => state.cars);
+
+  const searchCar = (e) => {
+    console.log(e.target.value);
+    // console.log(cars.value[0]);
+    const searchTerm = e.target.value;
+    const carFilter = cars.value.filter((value) => {
+      return value.make.includes(searchTerm) || value.model.includes(searchTerm) || value.type.includes(searchTerm);
+    });
+    
+    if(searchTerm === ""){
+      setCarList([]);
+    }else {
+      setCarList(carFilter);
+      console.log(carList)
+    }
+  }
+
+  useEffect(() => {
+    console.log(carList)
+  },[carList])
+
   return (
     <div className='vehicle-search p-10'>
+      {carList.length > 0 && <HomeCarList cars={carList} />}
       <form className='mt-4'>
         <label className='inline-flex'>
-        
-          <input type="text" placeholder='Search by make model, or body type' 
+          <input type="text"
+              placeholder='Search by make model, or body type' 
+              onChange={searchCar}
               className="mt-1 block px-3 py-2 bg-white border border-slate-200 text-sm shadow-sm placeholder-slate-400
                          focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500
                        disabled:bg-slate-50  disabled:shadow-none

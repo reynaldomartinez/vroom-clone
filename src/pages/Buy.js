@@ -1,7 +1,6 @@
 import React, { useState, Suspense } from 'react'
 import './Buy.css';
 import { useSelector } from 'react-redux';
-import VehicleCards from '../components/VehicleCards';
 import ReactPaginate from 'react-paginate';
 import AnimatedCard from '../components/AnimatedCard';
 
@@ -22,9 +21,12 @@ function Buy() {
     return new Promise(resolve => {
       setTimeout(() => {
         resolve(import('../components/VehicleCards.js'))
-      }, 100)
+      }, 1000)
     })
   }) 
+  // const VehicleCards = React.lazy(() => {
+  //   return import('../components/VehicleCards');
+  // })
 
   return (
     <section>
