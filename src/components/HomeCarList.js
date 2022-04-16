@@ -7,7 +7,7 @@ function HomeCarList(props) {
         <ul className='overflow-hidden'>
             {
                 props.cars.map((car) => {
-                    return <li key={car.id}><p>{car.make} {car.model}</p></li>
+                    return <li key={car.id}><p>{car.make.charAt(0).toUpperCase() + car.make.slice(1)} {car.model}</p></li>
                 })
             }
         </ul>

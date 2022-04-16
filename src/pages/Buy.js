@@ -3,6 +3,7 @@ import './Buy.css';
 import { useSelector } from 'react-redux';
 import ReactPaginate from 'react-paginate';
 import AnimatedCard from '../components/AnimatedCard';
+import { Link } from 'react-router-dom';
 
 function Buy() {
   const cars = useSelector((state) => state.cars.value);
@@ -33,8 +34,12 @@ function Buy() {
       <div className='cars-wrapper'>
           {
           displayCars.map((car) => {
-            console.log(car);
-            return car && <Suspense fallback={<AnimatedCard />}><VehicleCards key={car.id} cars={car} /></Suspense>
+            console.log(car, car.id);
+            return car && <Suspense fallback={<AnimatedCard />}>
+                            <Link to={`/cars/${car.id}/${car.make}`}>
+                              <VehicleCards key={car.id} cars={car} />
+                            </Link>
+                          </Suspense>
           })
         }
 

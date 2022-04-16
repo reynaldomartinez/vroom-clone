@@ -1,0 +1,13 @@
+
+
+@media (max-width: 599px){
+    .car-detail {
+        line-height: 40px;
+    }
+    .extra-details {
+        padding-bottom: 100px;
+    }
+    .extra-details p{
+        padding: 20px;
+    }
+}
