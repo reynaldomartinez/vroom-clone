@@ -8,7 +8,7 @@ function SearchBar() {
   const cars = useSelector((state) => state.cars);
 
   const searchCar = (e) => {
-    console.log(e.target.value);
+    // console.log(e.target.value);
     // console.log(cars.value[0]);
     const searchTerm = e.target.value.toLowerCase();
     const carFilter = cars.value.filter((value) => {

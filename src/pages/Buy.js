@@ -33,7 +33,7 @@ function Buy() {
           {
           displayCars.map((car) => {
             // console.log(car, car.id);
-            return car ? (<Suspense fallback={<AnimatedCard />}>
+            return car ? (<Suspense key={car.id}  fallback={<AnimatedCard />}>
                             <Link to={`/cars/${car.id}/${car.make}`} key={car.id} car={car}>
                               <VehicleCards key={car.id} cars={car} />
                             </Link>

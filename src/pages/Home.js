@@ -4,7 +4,7 @@ import homeFrontCar from '../assets/download.png';
 import truck from '../assets/truck-mobile.webp';
 import suv from '../assets/suv-mobile.png';
 import sedan from '../assets/sedan-mobile.webp';
-
+import { Link } from 'react-router-dom';
 import './Home.css';
 
 function Home() {
@@ -26,25 +26,26 @@ function Home() {
         <div className='vehicle-type-wrapper bg-white text-center'>
             <h2>shop by vehicle type</h2>
             <div className='vehicle-type '>
-                <a href="/" className='hover:text-red-500'>
-                    <img src={truck} alt="type: truck" className='h-36 ' />
-                    <span>Shop Trucks</span>
-                </a>
-
-                <a href="/" className='hover:text-red-500'>
+                <Link to={`/cars/trucks`} className='hover:text-red-500' >
+                        <img src={truck} alt="type: truck" className='h-36 ' />
+                        <span>Shop Trucks</span>
+                </Link>
+                <Link to={`/cars/suv`} className='hover:text-red-500' >
                     <img src={suv} alt="type: suv" />
                     <span>Shop SUVsd</span>
-                </a>
-                <a href="/" className='hover:text-red-500'>
+                </Link>
+                <Link to={`/cars/sedan`} className='hover:text-red-500' >
                     <img src={sedan} alt="type:sedan" />
                     <span>Shop Sedans</span>
-                </a>
+                </Link>
             </div>
         </div>
-{/* High Quality, Buying Made Easy, Delivered Right to You */}
+        
         <div className="shop-vehicles-wrapper">
             <div className='hqt p-2'>
+            
                 <img src={truck} alt="high quality trucks" className='hqt-img rounded-full' />
+            
                 <div className='hq-text '>
                     <h2 className='pl-2'>High-Quality Cars</h2>
                     <p className="mt-4 px-4 text-sm leading-6 col-start-1 sm:col-span-2 lg:mt-6 lg:row-start-4 lg:col-span-1 dark:text-slate-400">

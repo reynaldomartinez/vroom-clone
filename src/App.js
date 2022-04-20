@@ -16,12 +16,9 @@ function App() {
 
       <Routes>
         <Route path='/' element={<Home />} />
-
         <Route path='/cars' element={<Buy />} />
         <Route path='/cars/:make' element={<CarType />} />
         <Route path='/cars/:id/:make' element={<Car car={cars} />} />
-
-        
       </Routes>
     </div>
   )

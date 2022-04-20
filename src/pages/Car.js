@@ -5,12 +5,11 @@ import '../pages/Car.css';
 function Car(props) {
   let {id}  = useParams();
   let index = props.car.findIndex(e => {
-    console.log(e);
-    console.log(e.id);
-    console.log(id);
+    // console.log(e);
+    // console.log(e.id);
+    // console.log(id);
     return e.id === parseInt(id);
   });
-
   let car = props.car[index];
   
   return (

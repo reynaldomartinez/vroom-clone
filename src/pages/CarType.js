@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
 import { useLocation, useParams, Link } from 'react-router-dom';
 import VehicleCards from '../components/VehicleCards';
@@ -8,12 +8,28 @@ function CarType() {
   const cars = useSelector((state) => state.cars.value);
   // const location = useLocation();
 
-  let x = cars.filter((x) => {
-      return x.make.includes(make);
-    })
-
-  useEffect(() => {
-  })
+    switch (make) {
+      case 'trucks':
+        var x = cars.filter((x) => {
+          return x.type.includes('truck');
+        });
+        break;
+      case 'sedan':
+        var x = cars.filter((x) => {
+          return x.type.includes('sedan');
+        });
+        break;
+      case 'suv':
+        var x = cars.filter((x) => {
+          return x.type.includes('suv');
+        });
+        break;
+      default:
+        var x = cars.filter((x) => {
+          return x.make.includes(make);
+        });
+        break;
+    }
 
   return (
     <div>
