@@ -4,6 +4,7 @@ import './App.css';
 import Navbar from './components/Navbar';
 import Buy from './pages/Buy';
 import Car from './pages/Car';
+import CarType from './pages/CarType';
 import Home from './pages/Home';
 
 function App() {
@@ -17,7 +18,9 @@ function App() {
         <Route path='/' element={<Home />} />
 
         <Route path='/cars' element={<Buy />} />
+        <Route path='/cars/:make' element={<CarType />} />
         <Route path='/cars/:id/:make' element={<Car car={cars} />} />
+
         
       </Routes>
     </div>

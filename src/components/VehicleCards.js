@@ -1,5 +1,4 @@
 import React, { Suspense } from 'react';
-import AnimatedCard from './AnimatedCard';
 import './VehicleCards.css';
 
 function VehicleCards(props) {

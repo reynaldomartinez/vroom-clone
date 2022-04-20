@@ -18,22 +18,16 @@ function SearchBar() {
     if(searchTerm === ""){
       setCarList([]);
     }else {
-      setCarList(carFilter);
-      console.log(carList)
+      setCarList(() => carFilter);
     }
   }
-
-  useEffect(() => {
-    console.log(carList)
-  },[carList])
-
   return (
     <div className='vehicle-search p-10'>
       {carList.length > 0 && <HomeCarList cars={carList} />}
       <form className='mt-4'>
         <label className='inline-flex'>
           <input type="text"
-              placeholder='Search by make model, or body type' 
+              placeholder='Search by make' 
               onChange={searchCar}
               className="mt-1 block px-3 py-2 bg-white border border-slate-200 text-sm shadow-sm placeholder-slate-400
                          focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500

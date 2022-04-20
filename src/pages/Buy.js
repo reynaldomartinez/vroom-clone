@@ -3,7 +3,7 @@ import './Buy.css';
 import { useSelector } from 'react-redux';
 import ReactPaginate from 'react-paginate';
 import AnimatedCard from '../components/AnimatedCard';
-import { Link } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 
 function Buy() {
   const cars = useSelector((state) => state.cars.value);
@@ -16,7 +16,6 @@ function Buy() {
   const changePage = ({selected}) => {
     setPageNumber(selected);
   }
-
   // .1sec Delay to make fallback visible
   const VehicleCards = React.lazy(() => {
     return new Promise(resolve => {
@@ -28,25 +27,21 @@ function Buy() {
   // const VehicleCards = React.lazy(() => {
   //   return import('../components/VehicleCards');
   // })
-
   return (
     <section>
       <div className='cars-wrapper'>
           {
           displayCars.map((car) => {
-            console.log(car, car.id);
-            return car && <Suspense fallback={<AnimatedCard />}>
-                            <Link to={`/cars/${car.id}/${car.make}`}>
+            // console.log(car, car.id);
+            return car ? (<Suspense fallback={<AnimatedCard />}>
+                            <Link to={`/cars/${car.id}/${car.make}`} key={car.id} car={car}>
                               <VehicleCards key={car.id} cars={car} />
                             </Link>
-                          </Suspense>
+                          </Suspense>) : (
+                            <h1>No vehicles available</h1>
+                          )
           })
         }
-
-        {
-          (cars.length <= 0) && <h1>No vehicles available</h1>
-        }
-
         <ReactPaginate 
           nextLabel={">"}
           onPageChange={changePage}

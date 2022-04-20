@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {useState} from 'react';
+import { Link } from 'react-router-dom';
 
 function HomeCarList(props) {
     // console.log(props.cars)
@@ -7,7 +8,9 @@ function HomeCarList(props) {
         <ul className='overflow-hidden'>
             {
                 props.cars.map((car) => {
-                    return <li key={car.id}><p>{car.make.charAt(0).toUpperCase() + car.make.slice(1)} {car.model}</p></li>
+                    return  <Link key={car.id} to={`cars/${car.make}`} state={{x: car.make, allcars: car.model}}>
+                                <li className='hover:bg-slate-300 pl-5 rounded-sm' key={car.id}><p>{car.make.charAt(0).toUpperCase() + car.make.slice(1)} {car.model}</p></li>
+                            </Link>
                 })
             }
         </ul>

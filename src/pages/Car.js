@@ -2,10 +2,15 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import '../pages/Car.css';
 
-
 function Car(props) {
   let {id}  = useParams();
-  let index = props.car.findIndex(e => e.id === parseInt(id));
+  let index = props.car.findIndex(e => {
+    console.log(e);
+    console.log(e.id);
+    console.log(id);
+    return e.id === parseInt(id);
+  });
+
   let car = props.car[index];
   
   return (
@@ -19,7 +24,6 @@ function Car(props) {
             <p>{`${car.year} ${car.make} ${car.model}`}</p>
             <h1>{`$${car.price.toLocaleString('us')}`}</h1>
           </div>
-
       </div>
 
       <div className='extra-details px-2.5 py-10'>
