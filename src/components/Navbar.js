@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Navbar.css';
 
 import { IoNotifications } from 'react-icons/io5';
@@ -6,12 +6,12 @@ import { BiMenuAltLeft } from "react-icons/bi";
 import { Link } from 'react-router-dom';
 
 function Navbar() {
+
   return (
     <div className='nav-wrapper bg-zinc-100 sticky top-0'>
             <div className='nav mx-auto bg-white shadow-lg flex justify-between lg:py-8 md:px-16'>
                 <Link to={'/'}>vroom Clone</Link>
                 <div className='flex'>
-
                     {/* <ul className='flex menu-list'>
                         <li><a href="">BUY</a></li>
                         <li><a href="">SELL/TRADE</a></li>
@@ -24,6 +24,8 @@ function Navbar() {
                     </div>
 
                     <IoNotifications id='ionNoti' /> 
+                    {/* Open menu when true */}
+
                     <BiMenuAltLeft id='biMenu' />
                 </div>
             </div>

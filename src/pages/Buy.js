@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import ReactPaginate from 'react-paginate';
 import AnimatedCard from '../components/AnimatedCard';
 import { Link, Outlet } from 'react-router-dom';
+import FilterCars from '../components/FilterCars';
 
 function Buy() {
   const cars = useSelector((state) => state.cars.value);
@@ -28,8 +29,14 @@ function Buy() {
   //   return import('../components/VehicleCards');
   // })
   return (
-    <section>
-      <div className='cars-wrapper'>
+    <section>          
+
+      <div className='cars-wrapper'>      
+      
+      <FilterCars id='filter' />
+
+        <div className=''>
+        </div>
           {
           displayCars.map((car) => {
             // console.log(car, car.id);
