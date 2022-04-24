@@ -25,7 +25,7 @@ export const Vehicles = [
       },
       {
         "id": 3,
-        "make": "charger",
+        "make": "dodge",
         "model": "hellcat",
         "engine": 8,
         "year": 2017,

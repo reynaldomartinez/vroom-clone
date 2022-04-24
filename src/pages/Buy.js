@@ -3,15 +3,18 @@ import './Buy.css';
 import { useSelector } from 'react-redux';
 import ReactPaginate from 'react-paginate';
 import AnimatedCard from '../components/AnimatedCard';
-import { Link, Outlet } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import FilterCars from '../components/FilterCars';
 
 function Buy() {
   const cars = useSelector((state) => state.cars.value);
+  const filteredMake = useSelector(state => state.cars.filterMakeOnly);
+
   const [pageNumber, setPageNumber] = useState(0);
   const carsPerPage = 4;
   const pagesVisited = pageNumber * carsPerPage;
   const displayCars = cars.slice(pagesVisited, pagesVisited + carsPerPage);
+  const makeCars = filteredMake.slice(pagesVisited, pagesVisited + carsPerPage);
   const pageCount = Math.ceil(cars.length / carsPerPage);
 
   const changePage = ({selected}) => {
@@ -28,27 +31,30 @@ function Buy() {
   // const VehicleCards = React.lazy(() => {
   //   return import('../components/VehicleCards');
   // })
+
   return (
-    <section>          
-
+    <section>
       <div className='cars-wrapper'>      
-      
-      <FilterCars id='filter' />
-
-        <div className=''>
-        </div>
+        <FilterCars id='filter' />
           {
-          displayCars.map((car) => {
-            // console.log(car, car.id);
-            return car ? (<Suspense key={car.id}  fallback={<AnimatedCard />}>
-                            <Link to={`/cars/${car.id}/${car.make}`} key={car.id} car={car}>
-                              <VehicleCards key={car.id} cars={car} />
-                            </Link>
-                          </Suspense>) : (
-                            <h1>No vehicles available</h1>
-                          )
-          })
-        }
+            filteredMake.length > 0 ? 
+              (makeCars.map((car) =>
+                (<Suspense key={car.id} fallback={<AnimatedCard />}>
+                              <Link to={`/cars/${car.id}/${car.make}`} key={car.id} car={car}>
+                                <VehicleCards key={car.id} cars={car} />
+                              </Link>
+                            </Suspense>)
+              ))
+              : displayCars.map((car) => {
+              return car ? (<Suspense key={car.id} fallback={<AnimatedCard />}>
+                              <Link to={`/cars/${car.id}/${car.make}`} key={car.id} car={car}>
+                                <VehicleCards key={car.id} cars={car} />
+                              </Link>
+                            </Suspense>) : (
+                              <h1>No vehicles available</h1>
+                            )
+            })
+          }
         <ReactPaginate 
           nextLabel={">"}
           onPageChange={changePage}
@@ -69,10 +75,8 @@ function Buy() {
           disabledClassName={"disabledBtn"}
         />
       </div>
-
       {/* <AnimatedCard /> */}
     </section>
   )
 }
-
 export default Buy;

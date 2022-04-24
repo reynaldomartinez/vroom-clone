@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 function Navbar() {
 
   return (
-    <div className='nav-wrapper bg-zinc-100 sticky top-0'>
+    <div className='nav-wrapper bg-zinc-100 sticky z-50 top-0'>
             <div className='nav mx-auto bg-white shadow-lg flex justify-between lg:py-8 md:px-16'>
                 <Link to={'/'}>vroom Clone</Link>
                 <div className='flex'>

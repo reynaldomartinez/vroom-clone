@@ -78,7 +78,6 @@ function Home() {
                     Buy now
                 </button>
             </div>
-            
 
         <div className='vroom-values p-8'>
             <h1 className='pl-24 text-2xl'>vroom values</h1>
@@ -137,7 +136,6 @@ function Home() {
                 </a>
             </div>
         </div>
-    
 
     </div>
   )
